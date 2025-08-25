@@ -5,6 +5,8 @@
 
 @layer base {
   :root {
+    --font-crimson: "Crimson Text", serif;
+
     --background: 0 0% 100%;
     --foreground: 211, 24%, 17%;
     --card: 0 0% 100%;
@@ -69,6 +71,10 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.551 0.027 264.364);
   }
+}
+
+.font-crimson {
+  font-family: var(--font-crimson);
 }
 
 @layer utilities {

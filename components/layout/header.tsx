@@ -28,6 +28,14 @@ export default function Header() {
     isMobileNavOpen ? "flex-col" : "hidden"
   } md:flex max-sm:w-full items-center`;
 
+  const navLinks = [
+    { label: "Home", href: ROUTE.home },
+    // { label: "Docs", href: "/docs" },
+    { label: "Features", href: ROUTE.features },
+    { label: "Pricing", href: ROUTE.pricing },
+    { label: "Invoices", href: ROUTE.invoices },
+  ];
+
   return (
     <header
       className={`${
@@ -37,7 +45,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto max-sm:flex-col container md:container w-full flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex max-sm:w-full items-center justify-between">
           <Link href={ROUTE.home} className="text-2xl font-bold italic">
-            <span className="text-indigo-700 text-3xl not-italic">Q</span>invoice
+            <span className="text-indigo-700 text-3xl not-italic">Q</span>
+            invoice
           </Link>
           <div className="md:hidden flex items-center">
             <button onClick={toggleMobileMenu} aria-controls="mobile-menu">
@@ -48,40 +57,20 @@ export default function Header() {
 
         <div className={`${mobileMenuClass} max-sm:mt-6`}>
           <nav className="md:flex space-x-8 text-gray-700">
-            <ul className="flex max-sm:flex-col gap-6 max-sm:gap-2 font-semibold">
-              <li>
-                <Link
-                  href={ROUTE.home}
-                  className={cn(
-                    "hover:text-indigo-600",
-                    isActive(ROUTE.home) && "text-indigo-700 font-bold"
-                  )}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={ROUTE.pricing}
-                  className={cn(
-                    "hover:text-indigo-600",
-                    isActive(ROUTE.pricing) && "text-indigo-700 font-bold"
-                  )}
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={ROUTE.dashboard}
-                  className={cn(
-                    "hover:text-indigo-600",
-                    isActive(ROUTE.dashboard) && "text-indigo-700 font-bold"
-                  )}
-                >
-                  Dashboard
-                </Link>
-              </li>
+            <ul className="flex max-sm:flex-col gap-6 max-sm:gap-2 font-medium">
+              {navLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={cn(
+                      "hover:text-indigo-600",
+                      isActive(href) && "text-indigo-700 font-semibold"
+                    )}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

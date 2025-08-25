@@ -1,5 +1,6 @@
 const ROUTE = {
   home: "/",
+  features: "/#features",
   pricing: "/pricing",
   login: "/auth/login",
   signup: "/auth/signup",
