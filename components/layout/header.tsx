@@ -84,7 +84,7 @@ export default function Header() {
             </Link>
             <Link
               href={ROUTE.signup}
-              className="bg-indigo-700 text-white px-4 py-2 rounded-md hover:bg-indigo-800 transition"
+              className="bg-indigo-700 text-white px-4 py-2 rounded-full hover:bg-indigo-800 transition"
             >
               Sign Up
             </Link>

@@ -12,7 +12,8 @@ export default function Features() {
     },
     {
       title: "Accept Payments",
-      description: "Let your clients pay online directly through the invoice.",
+      description:
+        "Enable clients to pay securely online straight from the invoice, faster and hassle-free.",
       icon: CreditCard,
       color: "bg-blue-100 text-blue-600",
     },
@@ -33,7 +34,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="flex-grow bg-white py-12 sm:py-16 px-5">
+    <section className="flex-grow bg-white py-12 sm:py-16 px-5" id="features">
       <div className="flex-col max-w-3xl mx-auto text-center mb-12 sm:mb-16">
         <h4 className="text-lg font-bold text-indigo-700">FEATURES</h4>
         <h2 className="text-2xl sm:text-4xl font-bold text-gray-900">
@@ -53,7 +54,7 @@ export default function Features() {
               >
                 <feature.icon className="size-6" />
               </div>
-               <div className="flex-1">
+              <div className="flex-1">
                 <h5 className="text-xl font-semibold text-gray-900">
                   {feature.title}
                 </h5>
