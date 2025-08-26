@@ -64,7 +64,7 @@ export default function Header() {
                     href={href}
                     className={cn(
                       "hover:text-indigo-600",
-                      isActive(href) && "text-indigo-700 font-semibold"
+                      isActive(href) && "text-indigo-700 font-medium",
                     )}
                   >
                     {label}
@@ -75,7 +75,7 @@ export default function Header() {
           </nav>
         </div>
         <div className={`${mobileMenuClass} max-sm:mt-8`}>
-          <div className="flex-col w-full space-x-5 items-center font-semibold">
+          <div className="flex-col w-full space-x-5 items-center font-medium">
             <Link
               href={ROUTE.login}
               className="text-gray-700 hover:text-indigo-600 md:px-1 max-sm:border px-4 max-sm:py-2 rounded-md"
