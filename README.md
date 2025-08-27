@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qinvoice
+A web platform designed to simplify invoicing. It allows you to create invoices, track finances, monitor status, generate reports, and accept payments, ensuring a streamlined invoicing workflow.
+
+
+<img width="1280" height="988" alt="Screenshot 2025-08-28 000628" src="https://github.com/user-attachments/assets/449f67b8-aec4-4365-928c-555ed4dfea16" />
 
 ## Getting Started
 
