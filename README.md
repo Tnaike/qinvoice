@@ -1,8 +1,7 @@
 # Qinvoice
 A web platform designed to simplify invoicing. It allows you to create invoices, track finances, monitor status, generate reports, and accept payments, ensuring a streamlined invoicing workflow.
 
-
-<img width="1280" height="988" alt="Screenshot 2025-08-28 000628" src="https://github.com/user-attachments/assets/449f67b8-aec4-4365-928c-555ed4dfea16" />
+<img width="1267" height="988" alt="Screenshot 2025-08-28 000628" src="https://github.com/user-attachments/assets/531f4086-9f37-44cf-be31-49b1ec469fa5" />
 
 ## Getting Started
 
