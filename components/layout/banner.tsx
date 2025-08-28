@@ -26,7 +26,7 @@ export default function Banner() {
         <div className="mt-8">
           <Button
             onClick={() => router.push(ROUTE.signup)}
-            className="bg-indigo-700 text-white rounded-full h-max px-6 text-base sm:text-lg hover:bg-indigo-800 transition cursor-pointer"
+            className="bg-indigo-600 text-white rounded-full h-max px-6 text-base sm:text-lg hover:bg-indigo-700 transition cursor-pointer"
           >
             Get Started Free →
           </Button>
