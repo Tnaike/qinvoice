@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
-import LoginForm from "@/components/auth/login-form";
+import SignUpForm from "@/components/auth/signup-form";
 import Spinner from "@/components/spinner";
 
 export default function Page() {
   return (
     <Suspense fallback={<Spinner />}>
-      <LoginForm />
+      <SignUpForm />
     </Suspense>
   );
 }

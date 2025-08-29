@@ -10,7 +10,7 @@ export default function Banner() {
   return (
     <section className="flex-grow bg-indigo-50 py-16 sm:py-28 px-5">
       <div className="flex-col max-w-3xl mx-auto text-center max-sm:mt-16 space-y-2">
-        <h1 className="text-4xl sm:text-7xl font-semibold font-crimson text-gray-900">
+        <h1 className="text-4xl sm:text-7xl font-semibold font-crimson text-gray-900 text-shadow-2xs">
           Simplify your invoicing process with{" "}
           <span className="italic underline decoration-indigo-700">
             Qinvoice
@@ -26,7 +26,7 @@ export default function Banner() {
         <div className="mt-8">
           <Button
             onClick={() => router.push(ROUTE.signup)}
-            className="bg-indigo-700 text-white rounded-full h-max px-6 text-base sm:text-lg hover:bg-indigo-800 transition cursor-pointer"
+            className="bg-indigo-600 text-white rounded-full h-max px-6 text-base sm:text-lg hover:bg-indigo-700 transition cursor-pointer"
           >
             Get Started Free →
           </Button>

@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
-import LoginForm from "@/components/auth/login-form";
+import SendResetEmail from "@/components/auth/password-reset/send-reset-email";
 import Spinner from "@/components/spinner";
 
 export default function Page() {
   return (
     <Suspense fallback={<Spinner />}>
-      <LoginForm />
+      <SendResetEmail />
     </Suspense>
   );
 }

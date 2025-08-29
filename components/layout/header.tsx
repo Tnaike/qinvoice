@@ -64,7 +64,7 @@ export default function Header() {
                     href={href}
                     className={cn(
                       "hover:text-indigo-600",
-                      isActive(href) && "text-indigo-700 font-medium",
+                      isActive(href) && "text-indigo-700 font-medium"
                     )}
                   >
                     {label}
@@ -84,7 +84,7 @@ export default function Header() {
             </Link>
             <Link
               href={ROUTE.signup}
-              className="bg-indigo-700 text-white px-4 py-2 rounded-full hover:bg-indigo-800 transition"
+              className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition"
             >
               Sign Up
             </Link>

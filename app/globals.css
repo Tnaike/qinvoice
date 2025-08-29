@@ -87,6 +87,22 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem !important;
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 1rem;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 1rem;
+    border: 1px solid #111827;
+  }
 }
 
 @layer base {
@@ -94,5 +110,10 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+  
+  input[type='number'] {
+    -moz-appearance: textField;
+    appearance: textfield;
   }
 }
