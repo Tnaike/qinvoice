@@ -95,7 +95,7 @@ const SignUpForm = () => {
                   <FormControl>
                     <TextField
                       type="email"
-                      label="Email Address"
+                      label="Email"
                       placeholder="Enter your email"
                       {...field}
                       className="font-medium"
@@ -127,7 +127,7 @@ const SignUpForm = () => {
           <Button
             type="submit"
             disabled={!isValid}
-            className="w-full h-max px-6 mt-3 sm:text-lg transition cursor-pointer"
+            className="w-full h-max px-6 mt-4 sm:text-lg transition cursor-pointer"
           >
             Sign Up
           </Button>
@@ -136,7 +136,7 @@ const SignUpForm = () => {
             Already have an account?
             <Link
               href="/auth/login"
-              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-800"
+              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
             >
               Login
             </Link>

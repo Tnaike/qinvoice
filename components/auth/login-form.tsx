@@ -54,7 +54,7 @@ const LoginForm = () => {
                   <FormControl>
                     <TextField
                       type="email"
-                      label="Email Address"
+                      label="Email"
                       placeholder="Enter your email"
                       {...field}
                       className="font-medium rounded-full"
@@ -94,7 +94,7 @@ const LoginForm = () => {
           <Button
             type="submit"
             disabled={!isValid}
-            className="w-full h-max px-6 sm:text-lg transition cursor-pointer rounded-full"
+            className="w-full h-max mt-1 px-6 sm:text-lg transition cursor-pointer rounded-full"
           >
             Log In
           </Button>
@@ -103,7 +103,7 @@ const LoginForm = () => {
             Don't have an account?
             <Link
               href="/auth/signup"
-              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-800"
+              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
             >
               Sign Up
             </Link>
