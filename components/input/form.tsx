@@ -13,6 +13,7 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
+import { CircleAlert } from "lucide-react";
 
 const Form = FormProvider;
 
@@ -79,7 +80,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn("space-y-1.5", className)} {...props} />
     </FormItemContext.Provider>
   );
 });
@@ -157,9 +158,14 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-red-500", className)}
+      className={cn(
+        "flex text-[13px] font-medium text-red-500 items-center",
+        className
+      )}
       {...props}
     >
+      {" "}
+      <CircleAlert className="inline size-4.5 mr-1 fill-red-500 text-white" />
       {body}
     </p>
   );

@@ -28,11 +28,7 @@ const SignUpForm = () => {
     },
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState: { isValid },
-  } = form;
+  const { handleSubmit, control } = form;
 
   const onSubmit = (data: z.infer<typeof SignupFormSchema>) => {
     console.log(data);
@@ -126,7 +122,6 @@ const SignUpForm = () => {
 
           <Button
             type="submit"
-            disabled={!isValid}
             className="w-full h-max px-6 mt-4 sm:text-lg transition cursor-pointer"
           >
             Sign Up

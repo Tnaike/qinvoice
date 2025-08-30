@@ -8,7 +8,10 @@ const passwordSchema = z
   .min(8, { message: "Password must be at least 8 characters" });
 
 const nameSchema = (field: string) =>
-  z.string().min(2, { message: `${field} must be at least 2 characters` });
+  z
+    .string()
+    .min(1, { message: `${field} is required` })
+    .min(2, { message: `${field} must be at least 2 characters` });
 
 export const LoginFormSchema = z.object({
   email: emailSchema,

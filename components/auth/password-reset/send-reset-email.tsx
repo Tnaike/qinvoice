@@ -25,11 +25,7 @@ const SendResetEmail = () => {
     },
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState: { isValid },
-  } = form;
+  const { handleSubmit, control } = form;
 
   const onSubmit = (data: z.infer<typeof ForgotPasswordSchema>) => {
     console.log(data);
@@ -66,22 +62,21 @@ const SendResetEmail = () => {
 
             <Button
               type="submit"
-              disabled={!isValid}
               className="w-full h-max px-6 sm:text-lg transition cursor-pointer"
             >
               Reset Password
             </Button>
-          </div>
 
-          <p className="flex text-center justify-center text-base mt-5">
-            <Link
-              href="/auth/login"
-              className="flex items-center w-max text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
-            >
-              <MoveLeft className="inline mr-1.5" />
-              Back to Log In
-            </Link>
-          </p>
+            <p className="flex text-center justify-center">
+              <Link
+                href="/auth/login"
+                className="flex items-center w-max text-indigo-700 font-semibold hover:text-indigo-500"
+              >
+                <MoveLeft className="inline mr-1.5" />
+                Back to Log In
+              </Link>
+            </p>
+          </div>
         </form>
       </Form>
     </div>
