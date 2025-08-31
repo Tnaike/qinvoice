@@ -16,8 +16,11 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ForgotPasswordSchema } from "@/components/auth/auth-schema";
+import { useRouter } from "next/navigation";
 
 const SendResetEmail = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
     resolver: zodResolver(ForgotPasswordSchema),
     defaultValues: {
@@ -29,6 +32,10 @@ const SendResetEmail = () => {
 
   const onSubmit = (data: z.infer<typeof ForgotPasswordSchema>) => {
     console.log(data);
+
+    const params = new URLSearchParams();
+    params.append("email", data.email);
+    router.push(`/auth/verify-forgot-password?${params.toString()}`);
   };
 
   return (
@@ -73,7 +80,7 @@ const SendResetEmail = () => {
                 className="flex items-center w-max text-indigo-700 font-semibold hover:text-indigo-500"
               >
                 <MoveLeft className="inline mr-1.5" />
-                Back to Log In
+                Back to Login
               </Link>
             </p>
           </div>

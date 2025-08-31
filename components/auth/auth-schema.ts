@@ -28,3 +28,11 @@ export const SignupFormSchema = z.object({
 export const ForgotPasswordSchema = z.object({
   email: emailSchema,
 });
+
+export const VerifyPasswordSchema = z.object({
+  otp: z
+    .string()
+    .min(6)
+    .max(6)
+    .regex(/^\d{6}$/, "Invalid one-time password"),
+});

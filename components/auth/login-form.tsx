@@ -92,7 +92,7 @@ const LoginForm = () => {
             // disabled={!isValid}
             className="w-full h-max mt-1 px-6 sm:text-lg transition cursor-pointer"
           >
-            Log In
+            Login
           </Button>
 
           <p className="text-center text-base mt-4">

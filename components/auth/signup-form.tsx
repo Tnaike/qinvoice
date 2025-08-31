@@ -131,7 +131,7 @@ const SignUpForm = () => {
             Already have an account?
             <Link
               href="/auth/login"
-              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
+              className="ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
             >
               Login
             </Link>
