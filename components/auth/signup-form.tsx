@@ -28,11 +28,7 @@ const SignUpForm = () => {
     },
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState: { isValid },
-  } = form;
+  const { handleSubmit, control } = form;
 
   const onSubmit = (data: z.infer<typeof SignupFormSchema>) => {
     console.log(data);
@@ -126,7 +122,6 @@ const SignUpForm = () => {
 
           <Button
             type="submit"
-            disabled={!isValid}
             className="w-full h-max px-6 mt-4 sm:text-lg transition cursor-pointer"
           >
             Sign Up
@@ -136,7 +131,7 @@ const SignUpForm = () => {
             Already have an account?
             <Link
               href="/auth/login"
-              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
+              className="ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
             >
               Login
             </Link>

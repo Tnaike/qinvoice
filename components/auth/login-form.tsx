@@ -26,11 +26,7 @@ const LoginForm = () => {
     },
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState: { isValid },
-  } = form;
+  const { handleSubmit, control } = form;
 
   const onSubmit = (data: z.infer<typeof LoginFormSchema>) => {
     console.log(data);
@@ -57,7 +53,7 @@ const LoginForm = () => {
                       label="Email"
                       placeholder="Enter your email"
                       {...field}
-                      className="font-medium rounded-full"
+                      className="font-medium"
                     />
                   </FormControl>
                   <FormMessage />
@@ -74,7 +70,7 @@ const LoginForm = () => {
                       label="Password"
                       placeholder="Enter Password"
                       {...field}
-                      className="font-medium rounded-full"
+                      className="font-medium"
                     />
                   </FormControl>
                   <FormMessage />
@@ -84,7 +80,7 @@ const LoginForm = () => {
             <div className="w-full text-right">
               <Link
                 href="/auth/forgot-password"
-                className="text-sm text-indigo-700 font-semibold hover:underline"
+                className="text-indigo-700 font-semibold hover:underline"
               >
                 Forgot Password?
               </Link>
@@ -93,17 +89,17 @@ const LoginForm = () => {
 
           <Button
             type="submit"
-            disabled={!isValid}
-            className="w-full h-max mt-1 px-6 sm:text-lg transition cursor-pointer rounded-full"
+            // disabled={!isValid}
+            className="w-full h-max mt-1 px-6 sm:text-lg transition cursor-pointer"
           >
-            Log In
+            Login
           </Button>
 
           <p className="text-center text-base mt-4">
             Don't have an account?
             <Link
               href="/auth/signup"
-              className="text-sm ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
+              className="ml-1 text-indigo-700 font-semibold hover:text-indigo-500"
             >
               Sign Up
             </Link>

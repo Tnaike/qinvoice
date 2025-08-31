@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as z from "zod";
 import { MoveLeft } from "lucide-react";
 import {
@@ -11,53 +11,75 @@ import {
   FormMessage,
 } from "@/components/input/form";
 import Link from "next/link";
-import TextField from "@/components/input/text-field";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ForgotPasswordSchema } from "@/components/auth/auth-schema";
+import { ResetPasswordSchema } from "@/components/auth/auth-schema";
 import { useRouter } from "next/navigation";
+import PasswordField from "@/components/input/password-field";
 
-const SendResetEmail = () => {
+const ResetPassword = () => {
   const router = useRouter();
+    const [email, setEmail] = useState("");
 
-  const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
-    resolver: zodResolver(ForgotPasswordSchema),
+  const form = useForm<z.infer<typeof ResetPasswordSchema>>({
+    resolver: zodResolver(ResetPasswordSchema),
     defaultValues: {
-      email: "",
+      password: "",
+      confirmPassword: "",
     },
   });
 
   const { handleSubmit, control } = form;
 
-  const onSubmit = (data: z.infer<typeof ForgotPasswordSchema>) => {
+  const onSubmit = (data: z.infer<typeof ResetPasswordSchema>) => {
     console.log(data);
-
-    const params = new URLSearchParams();
-    params.append("email", data.email);
-    router.push(`/auth/verify-forgot-password?${params.toString()}`);
   };
+
+  
+    useEffect(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchEmail = urlParams.get("email");
+      if (!searchEmail) {
+        router.push("/auth/signup");
+      }
+      setEmail(decodeURIComponent(searchEmail as string));
+    }, []);
 
   return (
     <div className="flex-1 w-full">
-      <h4 className="mb-1 text-2xl font-bold">Forgot Password?</h4>
-      <p className="mb-8 text-gray-700">
-        Enter your email address to receive a password reset email.
-      </p>
+      <h4 className="mb-1 text-2xl font-bold">Set new password</h4>
+      <p className="mb-8 text-gray-700">Must be at least 8 characters.</p>
 
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-6 w-full mb-4">
             <FormField
               control={control}
-              name="email"
+              name="password"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <TextField
-                      type="email"
-                      label="Email"
-                      placeholder="Enter your email"
+                    <PasswordField
+                      label="Password"
+                      placeholder="Enter Password"
+                      {...field}
+                      className="font-medium"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <PasswordField
+                      label="Confirm Password"
+                      placeholder="Enter Confirm Password"
                       {...field}
                       className="font-medium"
                     />
@@ -90,4 +112,4 @@ const SendResetEmail = () => {
   );
 };
 
-export default SendResetEmail;
+export default ResetPassword;
