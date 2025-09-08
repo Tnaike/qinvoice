@@ -3,6 +3,8 @@
 import React from "react";
 import { ReceiptText, Users, BadgeCheck, Hourglass } from "lucide-react";
 import DashboardCardItem from "@/components/Layout/DashboardCard/DashboardCardItem";
+import PageHeader from "@/components/Layout/dashboard-page-header";
+import { Button } from "../ui/button";
 
 const dashboardStats = [
   {
@@ -11,7 +13,7 @@ const dashboardStats = [
     icon: ReceiptText,
   },
   {
-    title: "Total Customers",
+    title: "Total Clients",
     value: "1,240",
     icon: Users,
   },
@@ -29,8 +31,17 @@ const dashboardStats = [
 
 export default function Dashboard() {
   return (
-    <div className="flex py-4 px-2">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 w-full gap-6">
+    <div className="flex flex-col space-y-6 py-3">
+      <PageHeader
+        title="Dashboard"
+        description="Welcome back! Here's an overview of your invoices."
+        rightSection={
+          <Button onClick={() => console.log("Create invoice")}>
+            Create Invoice
+          </Button>
+        }
+      />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 w-full gap-5">
         {dashboardStats.map((stat) => (
           <DashboardCardItem
             key={stat.title}

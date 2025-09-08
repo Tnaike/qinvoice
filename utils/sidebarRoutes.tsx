@@ -10,7 +10,7 @@ import {
 
 export const sidebarRoutes: SidebarRouteGroup = [
   { name: "Dashboard", path: ROUTE.dashboard, icon: LayoutDashboard },
-  { name: "Customers", path: ROUTE.customers, icon: UsersRound },
+  { name: "Clients", path: ROUTE.clients, icon: UsersRound },
   { name: "Invoices", path: ROUTE.invoices, icon: ReceiptText },
   { name: "Profile", path: ROUTE.profile, icon: UserRound },
   { name: "Settings", path: ROUTE.settings, icon: Settings },

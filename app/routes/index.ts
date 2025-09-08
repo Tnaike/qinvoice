@@ -9,7 +9,7 @@ const ROUTE = {
   privacy: "/privacy",
   support: "/support",
   dashboard: "/dashboard",
-  customers: "/customers",
+  clients: "/clients",
   profile: "/profile",
   invoices: "/invoices",
   settings: "/settings",

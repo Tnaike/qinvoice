@@ -39,7 +39,7 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
         <div className="flex items-center md:justify-between md:w-full gap-1.5">
           <button
             type="button"
-            className="flex items-center space-x-2 max-w-44 ml-3"
+            className="flex items-center space-x-2 max-w-44"
           >
             <div className="flex size-[34px] rounded-full bg-slate-100">
               <Image
