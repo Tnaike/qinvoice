@@ -66,7 +66,7 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
               />
             </div>
             <div className="flex flex-col items-start grow text-xs text-gray-700 font-bold truncate max-sm:hidden">
-              <span className="text-xxs text-gray-500 font-medium">
+              <span className="text-xs text-gray-500 font-medium">
                 {greeting}
               </span>
               <span>Timilehin Adenaike</span>

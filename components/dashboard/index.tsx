@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { ReceiptText, Users, BadgeCheck, Hourglass } from "lucide-react";
+import { ReceiptText, Users, BadgeCheck, Hourglass, Plus } from "lucide-react";
 import DashboardCardItem from "@/components/Layout/DashboardCard/DashboardCardItem";
 import PageHeader from "@/components/Layout/dashboard-page-header";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { DashboardInvoiceTable } from "./dashboard-table";
 
 const dashboardStats = [
   {
@@ -23,7 +24,7 @@ const dashboardStats = [
     icon: BadgeCheck,
   },
   {
-    title: "Unpaid Invoices",
+    title: "Pending Invoices",
     value: "1,000",
     icon: Hourglass,
   },
@@ -37,7 +38,7 @@ export default function Dashboard() {
         description="Welcome back! Here's an overview of your invoices."
         rightSection={
           <Button onClick={() => console.log("Create invoice")}>
-            Create Invoice
+            <Plus /> Create Invoice
           </Button>
         }
       />
@@ -51,6 +52,8 @@ export default function Dashboard() {
           />
         ))}
       </div>
+
+      <DashboardInvoiceTable />
     </div>
   );
 }
