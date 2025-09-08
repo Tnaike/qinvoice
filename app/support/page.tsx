@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
+import Footer from "@/components/Layout/footer";
+import Header from "@/components/Layout/header";
 
 export default function Support() {
   return (
