@@ -1,5 +1,6 @@
 "use Client";
 
+import { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ROUTE from "@/app/routes";
@@ -11,6 +12,15 @@ interface DashboardHeaderProps {
 
 const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
   const fallBackImage = "/assets/avatar.svg";
+
+  // Show greeting based on time
+  const greeting = useMemo(() => {
+    const hour = new Date().getHours();
+
+    if (hour < 12) return "Good Morning 👋";
+    if (hour < 18) return "Good Afternoon 🌞";
+    return "Good Evening 🌙";
+  }, []);
 
   return (
     <div className="flex bg-white">
@@ -55,9 +65,9 @@ const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
                 priority
               />
             </div>
-            <div className="flex flex-col items-start grow text-xs text-gray-700 font-bold truncate max-md:hidden">
+            <div className="flex flex-col items-start grow text-xs text-gray-700 font-bold truncate max-sm:hidden">
               <span className="text-xxs text-gray-500 font-medium">
-                Welcome 👋
+                {greeting}
               </span>
               <span>Timilehin Adenaike</span>
             </div>
