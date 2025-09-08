@@ -44,3 +44,8 @@ export function formatCurrency(
     currency,
   }).format(value);
 }
+
+export const getFallbackImage = (
+  imageSrc: string | undefined | null,
+  defaultImageSrc: string
+) => imageSrc || defaultImageSrc;

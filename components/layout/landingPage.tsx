@@ -1,7 +1,7 @@
-import Header from "@/components/layout/header";
-import Banner from "@/components/layout/banner";
-import Features from "@/components/layout/features";
-import Footer from "@/components/layout/footer";
+import Header from "@/components/Layout/header";
+import Banner from "@/components/Layout/banner";
+import Features from "@/components/Layout/features";
+import Footer from "@/components/Layout/footer";
 
 export default function LandingPage() {
   return (
