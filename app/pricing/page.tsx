@@ -1,6 +1,6 @@
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
-import PricingPlan from "@/components/layout/pricingPlan";
+import Footer from "@/components/Layout/footer";
+import Header from "@/components/Layout/header";
+import PricingPlan from "@/components/Layout/pricingPlan";
 
 export default function Pricing() {
   return (

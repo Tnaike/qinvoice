@@ -9,8 +9,10 @@ const ROUTE = {
   privacy: "/privacy",
   support: "/support",
   dashboard: "/dashboard",
+  clients: "/clients",
   profile: "/profile",
   invoices: "/invoices",
+  settings: "/settings",
 };
 
 export default ROUTE;

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Crimson_Text } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/providers";
 import { Toaster } from "@/components/ui/sonner";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,10 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${crimson.variable} antialiased`}
       >
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          {children}
+          <ReactQueryDevtools />
+        </ReactQueryProvider>
         <Toaster />
       </body>
     </html>
