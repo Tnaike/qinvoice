@@ -53,10 +53,7 @@ export const invoiceColumns: ColumnDef<InvoiceData>[] = [
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => (
-      <Badge
-        className="capitalize"
-        //   variant={checkBadgeValue(row.original?.status as BadgeStatusProps)}
-      >
+      <Badge className="capitalize" variant="default">
         {row.original?.status}
       </Badge>
     ),
@@ -64,11 +61,16 @@ export const invoiceColumns: ColumnDef<InvoiceData>[] = [
   {
     accessorKey: "amount",
     header: "Amount",
-    cell: ({ row }) => (
-      <p className="text-gray-900 font-bold">
-        {row.original?.amount ? `${formatMoney(row.original.amount)}` : "-"}
-      </p>
-    ),
+    cell: ({ row }) => {
+      return (
+        <p className="text-gray-900 font-bold">
+          {formatMoney(
+            row.original.amount,
+            row.original?.transactionCurrency
+          ) ?? "-"}
+        </p>
+      );
+    },
   },
   {
     header: "Action",
@@ -120,6 +122,7 @@ export const invoiceDataList: InvoiceData[] = [
     createdAt: "2025-07-01T10:36:15.123Z",
     dueDate: "2025-07-15T10:36:15.123Z",
     amount: 150000,
+    transactionCurrency: "USD",
     status: "Paid",
   },
   {
@@ -130,6 +133,7 @@ export const invoiceDataList: InvoiceData[] = [
     createdAt: "2025-07-02T09:12:45.123Z",
     dueDate: "2025-07-16T09:12:45.123Z",
     amount: 210000,
+    transactionCurrency: "USD",
     status: "Paid",
   },
   {
@@ -139,7 +143,8 @@ export const invoiceDataList: InvoiceData[] = [
     invoiceNumber: "200123",
     createdAt: "2025-07-02T11:20:45.123Z",
     dueDate: "2025-07-16T11:20:45.123Z",
-    amount: 250600,
+    amount: 2650600,
+    transactionCurrency: "NGN",
     status: "Pending",
   },
   {
@@ -149,7 +154,8 @@ export const invoiceDataList: InvoiceData[] = [
     invoiceNumber: "200125",
     createdAt: "2025-07-03T14:45:30.123Z",
     dueDate: "2025-07-17T14:45:30.123Z",
-    amount: 98000,
+    amount: 98000.85,
+    transactionCurrency: "USD",
     status: "Overdue",
   },
   {
@@ -159,7 +165,8 @@ export const invoiceDataList: InvoiceData[] = [
     invoiceNumber: "200126",
     createdAt: "2025-07-04T16:10:15.123Z",
     dueDate: "2025-07-18T16:10:15.123Z",
-    amount: 320500,
+    amount: 1320500,
+    transactionCurrency: "NGN",
     status: "Paid",
   },
   {
@@ -170,6 +177,7 @@ export const invoiceDataList: InvoiceData[] = [
     createdAt: "2025-07-05T08:25:00.123Z",
     dueDate: "2025-07-19T08:25:00.123Z",
     amount: 45000,
+    transactionCurrency: "EUR",
     status: "Pending",
   },
   {
@@ -180,6 +188,7 @@ export const invoiceDataList: InvoiceData[] = [
     createdAt: "2025-07-06T19:40:20.123Z",
     dueDate: "2025-07-20T19:40:20.123Z",
     amount: 785000,
+    transactionCurrency: "NGN",
     status: "Overdue",
   },
 ];

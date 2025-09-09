@@ -6,26 +6,27 @@ import DashboardCardItem from "@/components/Layout/DashboardCard/DashboardCardIt
 import PageHeader from "@/components/Layout/dashboard-page-header";
 import { Button } from "@/components/ui/button";
 import { DashboardInvoiceTable } from "./dashboard-table";
+import { formatAmount } from "@/lib/utils";
 
 const dashboardStats = [
   {
     title: "Total Invoices",
-    value: "12,450",
+    value: formatAmount(12450, 0),
     icon: ReceiptText,
   },
   {
     title: "Total Clients",
-    value: "1,240",
+    value: formatAmount(1240, 0),
     icon: Users,
   },
   {
     title: "Paid Invoices",
-    value: "11,450",
+    value: formatAmount(11450, 0),
     icon: BadgeCheck,
   },
   {
     title: "Pending Invoices",
-    value: "1,000",
+    value: formatAmount(1000, 0),
     icon: Hourglass,
   },
 ];
@@ -42,7 +43,7 @@ export default function Dashboard() {
           </Button>
         }
       />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 w-full gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 w-full gap-3 sm:gap-5">
         {dashboardStats.map((stat) => (
           <DashboardCardItem
             key={stat.title}

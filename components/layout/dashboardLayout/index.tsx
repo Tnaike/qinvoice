@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="flex w-full h-screen bg-white">
+    <div className="flex w-full h-full bg-white">
       {sidebarOpen && (
         <div
           className="fixed top-0 left-0 w-screen h-screen bg-black opacity-50 z-[11] duration-200"
@@ -31,7 +31,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <DashboardHeader onToggleSidebar={toggleSidebar} />
       </div>
-      <div className="h-full grow px-4 md:px-6 md:pt-20 pt-16 pb-16 bg-slate-50 md:ml-[250px]">
+      <div className="h-full w-full px-4 md:px-6 md:pt-20 pt-16 pb-16 bg-slate-50 md:ml-[250px]">
         {children}
       </div>
     </div>

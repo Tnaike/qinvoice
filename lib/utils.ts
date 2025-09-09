@@ -81,3 +81,14 @@ export const formatMoney = (
     maximumFractionDigits: decimalPlaces,
   }).format(amount);
 };
+
+export function formatAmount(amount = 0, dp = 2): string {
+  try {
+    return parseFloat(amount.toFixed(dp)).toLocaleString("en", {
+      maximumFractionDigits: dp,
+      minimumFractionDigits: dp,
+    });
+  } catch (error) {
+    return "0.00";
+  }
+}

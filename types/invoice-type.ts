@@ -1,3 +1,5 @@
+import { SupportedCurrency } from "@/lib/utils";
+
 export interface InvoiceData {
   _id: string;
   clientName: string;
@@ -6,5 +8,6 @@ export interface InvoiceData {
   createdAt: string;
   dueDate: string;
   amount: number;
+  transactionCurrency?: SupportedCurrency;
   status: "Paid" | "Pending" | "Overdue";
 }
