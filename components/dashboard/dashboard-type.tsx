@@ -10,26 +10,41 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Download, Ellipsis, Eye } from "lucide-react";
-import { formatDate, formatMoney } from "@/lib/utils";
+import { formatDate, formatMoney, getBgColor } from "@/lib/utils";
 
 export const invoiceColumns: ColumnDef<InvoiceData>[] = [
   {
     accessorKey: "clientName",
     header: "Client Name",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-x-4">
-        <div className="flex flex-col justify-between">
-          <p className="font-semibold">{row.original?.clientName ?? "-"}</p>
+    cell: ({ row }) => {
+      const clientName = row.original?.clientName ?? "-";
+      const initial = clientName.charAt(0).toUpperCase();
+      const bgColor = getBgColor(clientName);
 
-          <p className="text-gray-500 text-sm">
-            Invoice{" "}
-            {row.original?.invoiceNumber
-              ? `#${row.original.invoiceNumber}`
-              : "-"}
-          </p>
+      return (
+        <div className="flex items-center gap-x-4">
+          <div className="flex flex-col justify-between space-y-0.5">
+            <div className="flex gap-2 items-center">
+              <div
+                className={`flex items-center justify-center w-6 h-6 rounded-md ${bgColor}`}
+              >
+                <span className="text-xs font-semibold text-white">
+                  {initial}
+                </span>
+              </div>
+              <p className="font-semibold">{row.original?.clientName ?? "-"}</p>
+            </div>
+
+            <p className="text-gray-500 text-sm">
+              Invoice{" "}
+              {row.original?.invoiceNumber
+                ? `#${row.original.invoiceNumber}`
+                : "-"}
+            </p>
+          </div>
         </div>
-      </div>
-    ),
+      );
+    },
   },
   {
     accessorKey: "createdAt",

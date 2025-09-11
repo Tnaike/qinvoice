@@ -82,7 +82,7 @@ export const formatMoney = (
   }).format(amount);
 };
 
-export function formatAmount(amount = 0, dp = 2): string {
+export const formatAmount = (amount = 0, dp = 2): string => {
   try {
     return parseFloat(amount.toFixed(dp)).toLocaleString("en", {
       maximumFractionDigits: dp,
@@ -91,4 +91,42 @@ export function formatAmount(amount = 0, dp = 2): string {
   } catch (error) {
     return "0.00";
   }
-}
+};
+
+const colors = [
+  "bg-red-400",
+  "bg-red-500",
+  "bg-red-600",
+  "bg-blue-400",
+  "bg-blue-500",
+  "bg-blue-600",
+  "bg-green-400",
+  "bg-green-500",
+  "bg-green-600",
+  "bg-yellow-400",
+  "bg-yellow-500",
+  "bg-yellow-600",
+  "bg-purple-400",
+  "bg-purple-500",
+  "bg-purple-600",
+  "bg-pink-400",
+  "bg-pink-500",
+  "bg-pink-600",
+  "bg-indigo-400",
+  "bg-indigo-500",
+  "bg-indigo-600",
+  "bg-orange-400",
+  "bg-orange-500",
+  "bg-orange-600",
+  "bg-gray-600",
+  "bg-gray-700",
+  "bg-gray-800",
+];
+
+export const getBgColor = (name: string) => {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return colors[Math.abs(hash) % colors.length];
+};
